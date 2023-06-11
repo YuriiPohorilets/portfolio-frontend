@@ -1,3 +1,9 @@
+import { AppBar } from 'components/AppBar/AppBar';
+
 export const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <AppBar />
+    </div>
+  );
 };
