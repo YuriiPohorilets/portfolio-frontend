@@ -5,7 +5,7 @@ import { NavBar } from 'components/NavBar/NavBar';
 
 export const AppBar = () => {
   return (
-    <MuiAppBar sx={{ py: '16px', bgcolor: 'primary.darker', boxShadow: 0 }}>
+    <MuiAppBar component="nav" sx={{ py: '16px', bgcolor: 'primary.darker', boxShadow: 0 }}>
       <Container>
         <Box
           sx={{

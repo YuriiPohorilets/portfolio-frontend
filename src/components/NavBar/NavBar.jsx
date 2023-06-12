@@ -11,30 +11,37 @@ import {
   Toolbar,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { navList } from 'data/constants';
 import { Logo } from 'components/Logo/Logo';
+import { navList } from 'data/constants';
 
 export const NavBar = props => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { window } = props;
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState);
-  };
+  const container = window !== undefined ? () => window().document.body : undefined;
+
+  const handleDrawerToggle = () => setIsMobileOpen(prevState => !prevState);
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor: 'primary.darker' }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: 'center', bgcolor: 'primary.darker', py: '32px' }}
+    >
       <Logo />
 
-      <List>
+      <List sx={{ mt: '24px' }}>
         {navList.map(({ name, path }) => (
           <ListItem key={name} disablePadding>
             <ListItemButton
               component={Link}
               href={path}
-              sx={{ textAlign: 'center', color: 'primary.light' }}
+              sx={{
+                textAlign: 'center',
+                color: 'primary.light',
+                '&:hover': { bgcolor: 'primary.main' },
+              }}
             >
-              <ListItemText primary={name} />
+              <ListItemText primary={name} sx={{ '& .MuiTypography-root': { fontSize: '20px' } }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -42,24 +49,28 @@ export const NavBar = props => {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: 'flex' }}>
-      <Toolbar sx={{ minHeight: '64px' }}>
+      <Toolbar sx={{ minHeight: '64px' }} disableGutters>
         <IconButton
           color="inherit"
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
+          size="large"
           sx={{ display: { sm: 'none' } }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ width: '32px', height: '32px' }} />
         </IconButton>
 
         <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '32px' }}>
           {navList.map(({ name, path }) => (
-            <Link key={path} underline="none" href={path} sx={{ color: 'primary.light' }}>
+            <Link
+              key={path}
+              underline="none"
+              href={path}
+              sx={{ color: 'primary.light', fontSize: '20px' }}
+            >
               {name}
             </Link>
           ))}
@@ -70,7 +81,7 @@ export const NavBar = props => {
         <Drawer
           container={container}
           variant="temporary"
-          open={mobileOpen}
+          open={isMobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true,
