@@ -45,6 +45,7 @@ export const Home = () => {
             </Typography>
 
             <Typography
+              component="h1"
               sx={{
                 mb: '56px',
                 fontSize: { xs: '54px', md: '64px' },
