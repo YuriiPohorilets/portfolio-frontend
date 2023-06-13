@@ -13,6 +13,19 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { Logo } from 'components/Logo/Logo';
 import { navList } from 'data/constants';
+import {
+  drawerPaper,
+  drawerWrapper,
+  drawerMenu,
+  drawerButton,
+  drawerItem,
+  wrapper,
+  toolbar,
+  iconWrapper,
+  icon,
+  menuList,
+  menuItem,
+} from './navBarStyles';
 
 export const NavBar = props => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -23,25 +36,14 @@ export const NavBar = props => {
   const handleDrawerToggle = () => setIsMobileOpen(prevState => !prevState);
 
   const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: 'center', bgcolor: 'primary.darker', py: '32px' }}
-    >
+    <Box onClick={handleDrawerToggle} sx={drawerWrapper}>
       <Logo />
 
-      <List sx={{ mt: '24px' }}>
+      <List sx={drawerMenu}>
         {navList.map(({ name, path }) => (
           <ListItem key={name} disablePadding>
-            <ListItemButton
-              component={Link}
-              href={path}
-              sx={{
-                textAlign: 'center',
-                color: 'primary.light',
-                '&:hover': { bgcolor: 'primary.main' },
-              }}
-            >
-              <ListItemText primary={name} sx={{ '& .MuiTypography-root': { fontSize: '20px' } }} />
+            <ListItemButton component={Link} href={path} sx={drawerButton}>
+              <ListItemText primary={name} sx={drawerItem} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -50,27 +52,22 @@ export const NavBar = props => {
   );
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Toolbar sx={{ minHeight: '64px' }} disableGutters>
+    <Box sx={wrapper}>
+      <Toolbar sx={toolbar} disableGutters>
         <IconButton
           color="inherit"
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
           size="large"
-          sx={{ display: { sm: 'none' } }}
+          sx={iconWrapper}
         >
-          <MenuIcon sx={{ width: '32px', height: '32px' }} />
+          <MenuIcon sx={icon} />
         </IconButton>
 
-        <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '32px' }}>
+        <Box sx={menuList}>
           {navList.map(({ name, path }) => (
-            <Link
-              key={path}
-              underline="none"
-              href={path}
-              sx={{ color: 'primary.light', fontSize: '20px' }}
-            >
+            <Link key={path} underline="none" href={path} sx={menuItem}>
               {name}
             </Link>
           ))}
@@ -83,17 +80,8 @@ export const NavBar = props => {
           variant="temporary"
           open={isMobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: '300px',
-              bgcolor: 'primary.darker',
-            },
-          }}
+          ModalProps={{ keepMounted: true }}
+          sx={drawerPaper}
         >
           {drawer}
         </Drawer>
