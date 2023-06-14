@@ -12,6 +12,11 @@ export const theme = createTheme({
     neutral: {
       darker: 'rgba(34, 40, 49, 0.4);',
       accent: 'rgba(170, 139, 86, 0.4)',
+      light: 'rgba(221, 221, 221, 0.4)',
+    },
+
+    secondary: {
+      main: '#DDDDDD',
     },
 
     media: {
