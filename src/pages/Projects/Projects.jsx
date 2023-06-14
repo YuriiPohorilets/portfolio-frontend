@@ -11,7 +11,7 @@ import { list } from './projectsStyles';
 
 export const Projects = () => {
   const [page, setPage] = useState(1);
-  const [projectNumber] = useState(3);
+  const [projectNumber] = useState(4);
 
   const count = Math.ceil(projectsList.length / projectNumber);
   const currentPageNumber = page * projectNumber - projectNumber;

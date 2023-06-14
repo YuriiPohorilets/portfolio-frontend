@@ -67,3 +67,11 @@ export const buttonProject = {
 
   fontSize: '16px',
 };
+
+export const divider = {
+  width: '100%',
+
+  bgcolor: 'primary.light',
+
+  opacity: 0.2,
+};

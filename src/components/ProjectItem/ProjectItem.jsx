@@ -12,6 +12,7 @@ import {
   text,
   buttonWrapper,
   buttonProject,
+  divider,
 } from './projectItemStyles';
 
 export const ProjectItem = ({ project }) => {
@@ -58,7 +59,7 @@ export const ProjectItem = ({ project }) => {
         </Box>
       </ListItem>
 
-      <Divider sx={{ bgcolor: 'primary.light', width: '100%', opacity: 0.2 }} />
+      <Divider sx={divider} />
     </>
   );
 };
