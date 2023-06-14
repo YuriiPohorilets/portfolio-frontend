@@ -30,7 +30,7 @@ export const title = {
 // ================================================
 
 export const baseButton = {
-  p: '8px 32px',
+  p: { xs: '4px 24px', md: '8px 32px' },
 
   fontSize: '20px',
   textTransform: 'none',

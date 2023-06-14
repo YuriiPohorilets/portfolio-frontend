@@ -16,7 +16,10 @@ export const aboutInfo = {
     'Express.js',
     'MongoDB',
     'MUI',
+    'Tailwind',
   ],
+
+  softSkills: ['Attentiveness', 'Autonomous', 'Analytical thinking', 'Quicklearning'],
 };
 
 export const projectsList = [
@@ -39,10 +42,10 @@ export const projectsList = [
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686673816/public/proj-1_n9jbci.jpg',
     demoUrl: 'https://yuriipohorilets.github.io/superheroes-test-task_client/',
-    sources: {
-      frontend: 'https://github.com/YuriiPohorilets/superheroes-test-task_client',
-      backend: 'https://github.com/YuriiPohorilets/superheroes-test-task_server',
-    },
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/superheroes-test-task_client' },
+      { type: 'Backend', url: 'https://github.com/YuriiPohorilets/superheroes-test-task_server' },
+    ],
     date: '26 May 2023',
   },
 
@@ -50,29 +53,39 @@ export const projectsList = [
     id: 99,
     title: 'Tweets',
     description: '',
-    techSkills: [''],
+    techSkills: ['React', 'MUI', 'REST API', 'LocalStorage'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686674048/public/proj-2_cydv13.jpg',
-    demoUrl: '',
-    sources: {
-      frontend: '',
-      backend: null,
-    },
+    demoUrl: 'https://yuriipohorilets.github.io/test-task-tweets/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/test-task-tweets' },
+      { type: 'Backend', url: null },
+    ],
     date: '16 April 2023',
   },
 
   {
     id: 98,
-    title: 'Petly',
+    title: 'Petly (team project)',
     description: '',
-    techSkills: [''],
+    techSkills: [
+      'React',
+      'ReduxToolkit',
+      'Yup',
+      'Formik',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Joi',
+      'Swagger',
+    ],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686674260/public/proj-3_ydel2j.jpg',
-    demoUrl: '',
-    sources: {
-      frontend: '',
-      backend: '',
-    },
+    demoUrl: 'https://kirill-filonchuk.github.io/pet_team02/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/petsupport-project-03' },
+      { type: 'Backend', url: 'https://github.com/YuriiPohorilets/fs-55-project-3-backend' },
+    ],
     date: '31 March 2023',
   },
 
@@ -80,44 +93,104 @@ export const projectsList = [
     id: 97,
     title: 'Phonebook',
     description: '',
-    techSkills: [''],
+    techSkills: ['React', 'ReduxToolkit', 'Axios', 'Formik', 'Yup', 'StyledComponents'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686674770/public/proj-4_njwmvm.jpg',
-    demoUrl: '',
-    sources: {
-      frontend: '',
-      backend: null,
-    },
-    date: '31 March 2023',
+    demoUrl: 'https://yuriipohorilets.github.io/goit-react-hw-08-phonebook/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/goit-react-hw-08-phonebook' },
+      { type: 'Backend', url: 'https://github.com/YuriiPohorilets/nodejs-homework-rest-api' },
+    ],
+    date: '01 February 2023',
   },
 
   {
     id: 96,
-    title: 'Filmoteka',
+    title: 'Filmoteka (team project)',
     description: '',
-    techSkills: [''],
+    techSkills: ['HTML', 'SASS', 'JavaScript', 'Axios', 'REST API', 'Parcel'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686675083/public/proj-5_gxykhw.jpg',
-    demoUrl: '',
-    sources: {
-      frontend: '',
-      backend: null,
-    },
-    date: '31 March 2023',
+    demoUrl: 'https://yuriipohorilets.github.io/filmoteka-project-02/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/filmoteka-project-02' },
+      { type: 'Backend', url: null },
+    ],
+    date: '04 December 2022',
   },
 
   {
     id: 95,
     title: 'ImageFinder',
     description: '',
-    techSkills: [''],
+    techSkills: ['JavaScript', 'Axios', 'REST API', 'Parcel'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686675438/public/proj-6_id3afc.jpg',
-    demoUrl: '',
-    sources: {
-      frontend: '',
-      backend: null,
-    },
-    date: '31 March 2023',
+    demoUrl: 'https://yuriipohorilets.github.io/goit-js-hw-11/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/goit-js-hw-11' },
+      { type: 'Backend', url: null },
+    ],
+    date: '06 October 2022',
+  },
+
+  {
+    id: 94,
+    title: 'IceCream (team project)',
+    description: '',
+    techSkills: ['HTML', 'SASS', 'Parcel', 'Mobile first', 'BEM'],
+    imgUrl:
+      'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686764838/public/proj-7_vmxrbg.jpg',
+    demoUrl: 'https://yuriipohorilets.github.io/icecream-project-01/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/icecream-project-01' },
+      { type: 'Backend', url: null },
+    ],
+    date: '06 October 2022',
+  },
+
+  {
+    id: 93,
+    title: 'WebStudio',
+    description: '',
+    techSkills: ['HTML', 'SASS', 'Mobile first', 'BEM'],
+    imgUrl:
+      'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765180/public/proj-8_gnteie.jpg',
+    demoUrl: 'https://yuriipohorilets.github.io/goit-markup-hw-08/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/goit-markup-hw-08' },
+      { type: 'Backend', url: null },
+    ],
+    date: '06 October 2022',
+  },
+
+  {
+    id: 92,
+    title: 'Britlex',
+    description: '',
+    techSkills: ['HTML', 'SASS', 'Grid', 'BEM'],
+    imgUrl:
+      'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765308/public/proj-9_w3hnmf.jpg',
+    demoUrl: 'https://yuriipohorilets.github.io/Britlex/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/Britlex' },
+      { type: 'Backend', url: null },
+    ],
+    date: '06 October 2022',
+  },
+
+  {
+    id: 91,
+    title: 'Bhromaon Travel',
+    description: '',
+    techSkills: ['HTML', 'SASS', 'BEM'],
+    imgUrl:
+      'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765618/public/proj-10_tvrq7e.jpg',
+    demoUrl: 'https://yuriipohorilets.github.io/bhromaon-travel/',
+    sources: [
+      { type: 'Frontend', url: 'https://github.com/YuriiPohorilets/bhromaon-travel' },
+      { type: 'Backend', url: null },
+    ],
+    date: '06 October 2022',
   },
 ];

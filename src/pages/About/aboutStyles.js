@@ -23,6 +23,13 @@ export const subtitle = {
   fontSize: '24px',
 };
 
+export const skillWrapper = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  gap: '24px',
+};
+
 export const skillList = {
   p: 0,
   height: 'fit-content',

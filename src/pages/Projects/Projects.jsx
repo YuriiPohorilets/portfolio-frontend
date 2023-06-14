@@ -11,7 +11,7 @@ export const Projects = () => {
       <Container>
         <Title>Projects</Title>
 
-        <List disablePadding>
+        <List disablePadding sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
           {projectsList.map(project => (
             <ProjectItem key={project.id} project={project} />
           ))}
