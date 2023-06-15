@@ -1,7 +1,6 @@
 import { useState, useLayoutEffect } from 'react';
 
 const clamp = value => Math.max(0, value);
-
 const isBetween = (value, floor, ceil) => value >= floor && value <= ceil;
 
 export const useScroll = (ids, offset = 0) => {

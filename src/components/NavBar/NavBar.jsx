@@ -49,7 +49,7 @@ export const NavBar = props => {
               component={Link}
               href={path}
               sx={drawerButton}
-              className={activeId === name.toLowerCase() ? 'active' : ''}
+              className={activeId === path.split('#')[1] ? 'active' : ''}
             >
               <ListItemText primary={name} sx={drawerItem} />
             </ListItemButton>
@@ -79,8 +79,8 @@ export const NavBar = props => {
               key={path}
               underline="none"
               href={path}
-              sx={{ ...menuItem }}
-              className={activeId === name.toLowerCase() ? 'active' : ''}
+              sx={menuItem}
+              className={activeId === path.split('#')[1] ? 'active' : ''}
             >
               {name}
             </Link>

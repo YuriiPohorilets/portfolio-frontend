@@ -22,7 +22,7 @@ export const drawerMenu = {
 
 export const drawerButton = {
   '&:hover': { bgcolor: 'primary.main' },
-  '&.active': { color: 'red' },
+  '&.active': { color: 'primary.accent', bgcolor: 'primary.main' },
 
   textAlign: 'center',
   color: 'primary.light',
@@ -55,8 +55,42 @@ export const menuList = {
 };
 
 export const menuItem = {
-  '&.active': { color: 'red' },
+  '&:hover': { color: 'primary.accent' },
+
+  '&::after': {
+    content: "''",
+
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+
+    width: '65%',
+    height: '2px',
+    display: 'block',
+
+    bgcolor: 'primary.accent',
+
+    transform: 'scaleX(0)',
+    transformOrigin: 'bottom right',
+    transition: 'transform 200ms ease-in-out',
+  },
+
+  '&.active': {
+    color: 'primary.accent',
+
+    '&::after': {
+      transform: 'scaleX(1)',
+      transformOrigin: 'bottom left',
+    },
+  },
+
+  position: 'relative',
+
+  py: '8px',
 
   fontSize: '20px',
   color: 'primary.light',
+
+  transition: 'color 200ms ease-in-out',
+  overflow: 'hidden',
 };
