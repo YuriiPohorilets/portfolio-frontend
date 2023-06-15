@@ -9,7 +9,7 @@ export const Social = () => {
       <Box sx={wrapperContacts}>
         <Typography
           component={Link}
-          underline="hover"
+          underline="always"
           href="#"
           onClick={e => {
             e.preventDefault();
@@ -21,7 +21,7 @@ export const Social = () => {
         </Typography>
         <Typography
           component={Link}
-          underline="hover"
+          underline="always"
           href="#"
           onClick={e => {
             e.preventDefault();

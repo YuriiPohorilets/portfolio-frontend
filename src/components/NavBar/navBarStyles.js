@@ -72,7 +72,7 @@ export const menuItem = {
 
     transform: 'scaleX(0)',
     transformOrigin: 'bottom right',
-    transition: 'transform 200ms ease-in-out',
+    transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
 
   '&.active': {
@@ -91,6 +91,6 @@ export const menuItem = {
   fontSize: '20px',
   color: 'primary.light',
 
-  transition: 'color 200ms ease-in-out',
+  transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   overflow: 'hidden',
 };
