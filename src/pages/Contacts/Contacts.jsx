@@ -4,14 +4,15 @@ import { Wrapper } from 'components/Wrapper/Wrapper';
 import { Title } from 'components/Title/Title';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Social } from 'components/Social/Social';
+import { wrapper } from './contactsStyles';
 
 export const Contacts = () => {
   return (
-    <Wrapper id="contacts" sx={{ bgcolor: 'primary.darker' }}>
+    <Wrapper component="div" id="contacts" sx={{ bgcolor: 'primary.darker' }}>
       <Container>
         <Title>Contacts</Title>
 
-        <Box sx={{ display: 'flex', gap: '64px' }}>
+        <Box sx={wrapper}>
           <ContactForm />
 
           <Social />

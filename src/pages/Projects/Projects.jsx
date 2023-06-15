@@ -23,7 +23,7 @@ export const Projects = () => {
   };
 
   return (
-    <Wrapper id="projects">
+    <Wrapper component="section" id="projects">
       <Container>
         <Title>Projects</Title>
 

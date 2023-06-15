@@ -7,13 +7,36 @@ export const Social = () => {
   return (
     <Box>
       <Box sx={wrapperContacts}>
-        <Typography component={Link} underline="hover" href={email} sx={text}>
+        <Typography
+          component={Link}
+          underline="hover"
+          href="#"
+          onClick={e => {
+            e.preventDefault();
+            window.location.href = `mailto: ${email}`;
+          }}
+          sx={text}
+        >
           {email}
         </Typography>
-        <Typography component={Link} underline="hover" href={phone} sx={text}>
+        <Typography
+          component={Link}
+          underline="hover"
+          href="#"
+          onClick={e => {
+            e.preventDefault();
+            window.location.href = `tel: ${phone}`;
+          }}
+          sx={text}
+        >
           {phone}
         </Typography>
-        <Typography sx={text}>{address}</Typography>
+        <Typography sx={text}>
+          {address}{' '}
+          <Typography component="span" fontStyle="italic" color="primary.accent">
+            (ready to relocate at own expense)
+          </Typography>
+        </Typography>
       </Box>
 
       <Box sx={mediaWrapper}>

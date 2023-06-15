@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 
-export const Wrapper = ({ children, id, sx }) => {
+export const Wrapper = ({ children, component, id, sx }) => {
   return (
-    <Box component="section" id={id} sx={{ py: '60px', ...sx }}>
+    <Box component={component} id={id} sx={{ py: '60px', ...sx }}>
       {children}
     </Box>
   );

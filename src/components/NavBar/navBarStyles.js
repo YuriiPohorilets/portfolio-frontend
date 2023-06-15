@@ -22,6 +22,7 @@ export const drawerMenu = {
 
 export const drawerButton = {
   '&:hover': { bgcolor: 'primary.main' },
+  '&.active': { color: 'red' },
 
   textAlign: 'center',
   color: 'primary.light',
@@ -54,6 +55,8 @@ export const menuList = {
 };
 
 export const menuItem = {
+  '&.active': { color: 'red' },
+
   fontSize: '20px',
   color: 'primary.light',
 };

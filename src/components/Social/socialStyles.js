@@ -21,5 +21,6 @@ export const mediaIcon = {
   width: '40px',
   height: '40px',
 
+  bgcolor: 'primary.main',
   borderRadius: '4px',
 };

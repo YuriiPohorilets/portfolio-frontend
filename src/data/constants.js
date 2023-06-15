@@ -25,7 +25,7 @@ export const socialList = {
     },
     {
       name: 'skype',
-      url: 'live:.cid.56082ae985fc53a0',
+      url: 'https://join.skype.com/invite/F3Wf85FGYUR4',
       icon: <SkypeIcon sx={icon} />,
     },
     {

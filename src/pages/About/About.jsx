@@ -17,7 +17,7 @@ export const About = () => {
   const { intro, main, conclusion, techSkills, softSkills } = aboutInfo;
 
   return (
-    <Wrapper id="about">
+    <Wrapper component="section" id="about">
       <Container>
         <Title>About me</Title>
 

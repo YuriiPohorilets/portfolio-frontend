@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import { TextField, Button, Box } from '@mui/material';
 import { contactFormValidation } from 'schemas/contactFormValidation';
 import { containedLightButton } from 'shared/commonStyles';
+import { formWrapper } from './contactsFormStyles';
 
 const initialValues = {
   name: '',
@@ -21,18 +22,7 @@ export const ContactForm = () => {
   });
 
   return (
-    <Box
-      component="form"
-      noValidate
-      onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px',
-        maxWidth: '450px',
-        flex: '1 1 450px',
-      }}
-    >
+    <Box component="form" noValidate onSubmit={handleSubmit} sx={formWrapper}>
       <TextField
         variant="outlined"
         id="name"

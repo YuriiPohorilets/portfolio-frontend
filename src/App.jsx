@@ -16,6 +16,9 @@ export const App = () => {
         <Home />
         <About />
         <Projects />
+      </Box>
+
+      <Box component="footer">
         <Contacts />
       </Box>
     </>

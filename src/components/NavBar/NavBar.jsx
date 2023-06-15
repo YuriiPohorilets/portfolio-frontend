@@ -11,6 +11,7 @@ import {
   Toolbar,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
+import { useScroll } from 'hooks/useScroll';
 import { Logo } from 'components/Logo/Logo';
 import { navList } from 'data/constants';
 import {
@@ -28,7 +29,9 @@ import {
 } from './navBarStyles';
 
 export const NavBar = props => {
+  const ids = ['home', 'about', 'projects', 'contacts'];
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const activeId = useScroll(ids, 250);
   const { window } = props;
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -42,7 +45,12 @@ export const NavBar = props => {
       <List sx={drawerMenu}>
         {navList.map(({ name, path }) => (
           <ListItem key={name} disablePadding>
-            <ListItemButton component={Link} href={path} sx={drawerButton}>
+            <ListItemButton
+              component={Link}
+              href={path}
+              sx={drawerButton}
+              className={activeId === name.toLowerCase() ? 'active' : ''}
+            >
               <ListItemText primary={name} sx={drawerItem} />
             </ListItemButton>
           </ListItem>
@@ -67,7 +75,13 @@ export const NavBar = props => {
 
         <Box sx={menuList}>
           {navList.map(({ name, path }) => (
-            <Link key={path} underline="none" href={path} sx={menuItem}>
+            <Link
+              key={path}
+              underline="none"
+              href={path}
+              sx={{ ...menuItem }}
+              className={activeId === name.toLowerCase() ? 'active' : ''}
+            >
               {name}
             </Link>
           ))}
