@@ -72,5 +72,15 @@ export const outlinedDarkButton = {
 };
 
 // ================================================
-// FORM STYLES
+// ICONS STYLES
 // ================================================
+
+export const icon = {
+  width: '32px',
+  height: '32px',
+  fontSize: '32px',
+  color: 'primary.light',
+  // display: 'flex',
+  // justifyContent: 'center',
+  // alignItems: 'center',
+};

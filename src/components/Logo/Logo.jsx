@@ -3,7 +3,7 @@ import { outer, inner } from './logoStyles';
 
 export const Logo = () => {
   return (
-    <Link href="/" underline="none" sx={outer}>
+    <Link href="#home" underline="none" sx={outer}>
       [
       <Typography component="span" sx={inner}>
         YP

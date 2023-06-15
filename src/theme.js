@@ -23,7 +23,7 @@ export const theme = createTheme({
     media: {
       linkedin: '#027BB5',
       github: '#161B22',
-      skype: '#04ABEA',
+      skype: '#0078D7',
       telegram: '#20A0E1',
     },
   },

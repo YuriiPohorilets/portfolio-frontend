@@ -21,52 +21,56 @@ export const ContactForm = () => {
   });
 
   return (
-    <div>
-      <Box
-        component="form"
-        noValidate
-        onSubmit={handleSubmit}
-        sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
-      >
-        <TextField
-          variant="outlined"
-          id="name"
-          type="text"
-          label="Name"
-          value={values.name}
-          onChange={handleChange}
-          error={touched.name && !!errors.name}
-          helperText={touched.name && errors.name}
-        />
+    <Box
+      component="form"
+      noValidate
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        maxWidth: '450px',
+        flex: '1 1 450px',
+      }}
+    >
+      <TextField
+        variant="outlined"
+        id="name"
+        type="text"
+        label="Name"
+        value={values.name}
+        onChange={handleChange}
+        error={touched.name && !!errors.name}
+        helperText={touched.name && errors.name}
+      />
 
-        <TextField
-          variant="outlined"
-          id="email"
-          type="email"
-          label="Email"
-          value={values.email}
-          onChange={handleChange}
-          error={touched.email && !!errors.email}
-          helperText={touched.email && errors.email}
-        />
+      <TextField
+        variant="outlined"
+        id="email"
+        type="email"
+        label="Email"
+        value={values.email}
+        onChange={handleChange}
+        error={touched.email && !!errors.email}
+        helperText={touched.email && errors.email}
+      />
 
-        <TextField
-          variant="outlined"
-          id="message"
-          type="text"
-          label="Message"
-          multiline
-          rows={6}
-          value={values.message}
-          onChange={handleChange}
-          error={touched.message && !!errors.message}
-          helperText={touched.message && errors.message}
-        />
+      <TextField
+        variant="outlined"
+        id="message"
+        type="text"
+        label="Message"
+        multiline
+        rows={6}
+        value={values.message}
+        onChange={handleChange}
+        error={touched.message && !!errors.message}
+        helperText={touched.message && errors.message}
+      />
 
-        <Button type="sumbit" sx={containedLightButton}>
-          Send
-        </Button>
-      </Box>
-    </div>
+      <Button type="sumbit" sx={{ ...containedLightButton, width: '100%' }}>
+        Send
+      </Button>
+    </Box>
   );
 };
