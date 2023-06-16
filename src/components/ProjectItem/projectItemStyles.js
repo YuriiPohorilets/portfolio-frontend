@@ -13,7 +13,7 @@ export const imgWrapper = {
 
   flex: '1 1 550px',
 
-  borderRadius: '8px',
+  borderRadius: '4px',
   overflow: 'hidden',
 };
 

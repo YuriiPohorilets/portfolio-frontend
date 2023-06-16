@@ -1,6 +1,9 @@
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { useFormik } from 'formik';
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Button, Box, Snackbar } from '@mui/material';
 import { contactFormValidation } from 'schemas/contactFormValidation';
+import { AlertBar } from 'components/AlertBar/AlertBar';
 import { containedLightButton } from 'shared/commonStyles';
 import { formWrapper } from './contactsFormStyles';
 
@@ -11,56 +14,100 @@ const initialValues = {
 };
 
 export const ContactForm = () => {
+  const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
+  const [isOpenAlert, setIsOpenAlert] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const form = useRef();
+
+  const handleCloseAlert = (e, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setIsOpenAlert(false);
+  };
+
   const { handleSubmit, handleChange, resetForm, values, touched, errors } = useFormik({
     initialValues,
     validationSchema: contactFormValidation,
 
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: async () => {
+      emailjs
+        .sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY)
+        .then(
+          () => {
+            setIsOpenAlert(true);
+          },
+          error => {
+            setIsError(true);
+            console.log(error.text);
+          }
+        );
+
       resetForm();
     },
   });
 
   return (
-    <Box component="form" noValidate onSubmit={handleSubmit} sx={formWrapper}>
-      <TextField
-        variant="outlined"
-        id="name"
-        type="text"
-        label="Name"
-        value={values.name}
-        onChange={handleChange}
-        error={touched.name && !!errors.name}
-        helperText={touched.name && errors.name}
-      />
+    <>
+      <Box component="form" noValidate onSubmit={handleSubmit} ref={form} sx={formWrapper}>
+        <TextField
+          variant="outlined"
+          id="name"
+          type="text"
+          label="Name"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+          error={touched.name && !!errors.name}
+          helperText={touched.name && errors.name}
+        />
 
-      <TextField
-        variant="outlined"
-        id="email"
-        type="email"
-        label="Email"
-        value={values.email}
-        onChange={handleChange}
-        error={touched.email && !!errors.email}
-        helperText={touched.email && errors.email}
-      />
+        <TextField
+          variant="outlined"
+          id="email"
+          type="email"
+          label="Email"
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+          error={touched.email && !!errors.email}
+          helperText={touched.email && errors.email}
+        />
 
-      <TextField
-        variant="outlined"
-        id="message"
-        type="text"
-        label="Message"
-        multiline
-        rows={6}
-        value={values.message}
-        onChange={handleChange}
-        error={touched.message && !!errors.message}
-        helperText={touched.message && errors.message}
-      />
+        <TextField
+          variant="outlined"
+          id="message"
+          type="text"
+          label="Message"
+          name="message"
+          multiline
+          rows={6}
+          value={values.message}
+          onChange={handleChange}
+          error={touched.message && !!errors.message}
+          helperText={touched.message && errors.message}
+        />
 
-      <Button type="sumbit" sx={{ ...containedLightButton, width: '100%' }}>
-        Send
-      </Button>
-    </Box>
+        <Button type="sumbit" sx={{ ...containedLightButton, width: '100%' }}>
+          Send
+        </Button>
+      </Box>
+
+      <Snackbar
+        open={isOpenAlert}
+        autoHideDuration={2000}
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <AlertBar
+          onClose={handleCloseAlert}
+          severity={isError ? 'error' : 'success'}
+          sx={{ width: '100%' }}
+        >
+          {isError ? 'Oops, something went wrong!' : 'Message sent successfully!'}
+        </AlertBar>
+      </Snackbar>
+    </>
   );
 };

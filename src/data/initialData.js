@@ -67,7 +67,8 @@ export const projectsList = [
   {
     id: 98,
     title: 'Petly (team project)',
-    description: '',
+    description:
+      'It is a web application designed to find and select a pet for adoption. Users can view different animal profiles, search by different criteria, save their favorite lists. Registered users can create their ads and add their pets to their profile. Edit user profile, personal information, photo. Validation form data. The application is developed using the MERN stack.',
     techSkills: [
       'React',
       'ReduxToolkit',
