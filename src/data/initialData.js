@@ -1,7 +1,7 @@
 export const aboutInfo = {
   intro:
-    "I'm a Junior Frontend Developer and master JavaScript, React, and Node.js. In addition, I have experience in implementing both individual and team projects. During my studies (1 year), I managed to work in a team on 3 projects. I also successfully performed the role of team lead on some projects.",
-  main: "I'm a Junior Frontend Developer and master JavaScript, React, and Node.js. In addition, I have experience in implementing both individual and team projects. During my studies (1 year), I managed to work in a team on 3 projects. I also successfully performed the role of team lead on some projects.",
+    "I'm a Junior Frontend Developer and master JavaScript, React, and Node.js. In addition, I have experience in implementing both individual and team projects. ",
+  main: 'During my studies (1 year), I managed to work in a team on 3 projects. I also successfully performed the role of team lead on some projects.',
   conclusion:
     "I'm fond of developing and getting new knowledge. I'm looking for a full-time job. It's important to me to grow as a Frontend Developer and put into practice my knowledge in JS and React.",
   techSkills: [
@@ -93,7 +93,8 @@ export const projectsList = [
   {
     id: 97,
     title: 'Phonebook',
-    description: '',
+    description:
+      'SPA application for saving and sorting your contacts. The application allows you to create an account and save, delete or filter your contacts in one place. Nice design, simple functionality. You can use the demo credentials for review app.',
     techSkills: ['React', 'ReduxToolkit', 'Axios', 'Formik', 'Yup', 'StyledComponents'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686674770/public/proj-4_njwmvm.jpg',
