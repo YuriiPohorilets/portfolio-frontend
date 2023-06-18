@@ -52,7 +52,8 @@ export const projectsList = [
   {
     id: 99,
     title: 'Tweets',
-    description: '',
+    description:
+      'It`s a simple app with a nice design for managing tweets, with the ability to filter by status and pagination.',
     techSkills: ['React', 'MUI', 'REST API', 'LocalStorage'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686674048/public/proj-2_cydv13.jpg',
@@ -68,7 +69,7 @@ export const projectsList = [
     id: 98,
     title: 'Petly (team project)',
     description:
-      'It is a web application designed to find and select a pet for adoption. Users can view different animal profiles, search by different criteria, save their favorite lists. Registered users can create their ads and add their pets to their profile. Edit user profile, personal information, photo. Validation form data. The application is developed using the MERN stack.',
+      'It is a web application designed to find and select a pet for adoption. Users can view different animal profiles, search by different criteria, save their favorite lists. Registered users can create their ads and add their pets to their profile. Edit user profile, personal information, photo. Validation form data. The application is developed using the MERN stack. In a team project, on this project, I held the role of Team leader backend side',
     techSkills: [
       'React',
       'ReduxToolkit',
@@ -109,7 +110,8 @@ export const projectsList = [
   {
     id: 96,
     title: 'Filmoteka (team project)',
-    description: '',
+    description:
+      'The responsive site for finding popular movies with the ability to watch the trailer, add to the queue to watch, or mark the watched movie. There is also pagination by page, the ability to search for a movie by title. In a team project, on this project, I held the role of Scrum master',
     techSkills: ['HTML', 'SASS', 'JavaScript', 'Axios', 'REST API', 'Parcel'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686675083/public/proj-5_gxykhw.jpg',
@@ -124,7 +126,8 @@ export const projectsList = [
   {
     id: 95,
     title: 'ImageFinder',
-    description: '',
+    description:
+      'Image search application by query name with brief photo statistics. It is also possible to view images in slider mode',
     techSkills: ['JavaScript', 'Axios', 'REST API', 'Parcel'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686675438/public/proj-6_id3afc.jpg',
@@ -139,7 +142,8 @@ export const projectsList = [
   {
     id: 94,
     title: 'IceCream (team project)',
-    description: '',
+    description:
+      'Responsive landing page is an ice cream shop with beautiful design and animation. Adapted for mobile phone, tablet and desktop. In a team project, on this project, I held the role of Team leader',
     techSkills: ['HTML', 'SASS', 'Parcel', 'Mobile first', 'BEM'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686764838/public/proj-7_vmxrbg.jpg',
@@ -154,7 +158,8 @@ export const projectsList = [
   {
     id: 93,
     title: 'WebStudio',
-    description: '',
+    description:
+      'Adaptive landing page for a web studio with a nice design. Adapted for mobile phone, tablet and desktop.',
     techSkills: ['HTML', 'SASS', 'Mobile first', 'BEM'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765180/public/proj-8_gnteie.jpg',
@@ -169,7 +174,8 @@ export const projectsList = [
   {
     id: 92,
     title: 'Britlex',
-    description: '',
+    description:
+      'Adaptive landing page for a web studio with a nice design. Adapted for mobile phone, tablet and desktop.',
     techSkills: ['HTML', 'SASS', 'Grid', 'BEM'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765308/public/proj-9_w3hnmf.jpg',
@@ -184,7 +190,8 @@ export const projectsList = [
   {
     id: 91,
     title: 'Bhromaon Travel',
-    description: '',
+    description:
+      'Adaptive landing page for a web studio with a nice design. Adapted for mobile phone, tablet and desktop.',
     techSkills: ['HTML', 'SASS', 'BEM'],
     imgUrl:
       'https://res.cloudinary.com/dixdf3mkj/image/upload/v1686765618/public/proj-10_tvrq7e.jpg',

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import { TextField, Button, Box, Snackbar } from '@mui/material';
 import { contactFormValidation } from 'schemas/contactFormValidation';
 import { AlertBar } from 'components/AlertBar/AlertBar';
+import { Loader } from 'components/Loader/Loader';
 import { containedLightButton } from 'shared/commonStyles';
 import { formWrapper } from './contactsFormStyles';
 
@@ -17,6 +18,7 @@ export const ContactForm = () => {
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
   const [isOpenAlert, setIsOpenAlert] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
 
   const handleCloseAlert = (e, reason) => {
@@ -31,18 +33,24 @@ export const ContactForm = () => {
     initialValues,
     validationSchema: contactFormValidation,
 
-    onSubmit: async () => {
+    onSubmit: () => {
       emailjs
         .sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY)
+        .then(setIsLoading(true))
         .then(
           () => {
+            setIsLoading(false);
             setIsOpenAlert(true);
           },
           error => {
             setIsError(true);
             console.log(error.text);
           }
-        );
+        )
+        .catch(error => {
+          setIsError(true);
+          console.log(error.message);
+        });
 
       resetForm();
     },
@@ -89,8 +97,8 @@ export const ContactForm = () => {
           helperText={touched.message && errors.message}
         />
 
-        <Button type="sumbit" sx={{ ...containedLightButton, width: '100%' }}>
-          Send
+        <Button type="sumbit" disabled={isLoading} sx={{ ...containedLightButton, width: '100%' }}>
+          {isLoading ? 'Sending...' : 'Send'} {isLoading && <Loader />}
         </Button>
       </Box>
 
