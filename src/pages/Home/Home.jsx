@@ -43,7 +43,7 @@ export const Home = () => {
                 variant="contained"
                 component={Link}
                 target="_blank"
-                href="https://drive.google.com/file/d/1SUJdjHkVTZ_H-ZJbAEHLFM1Md-W9YNfB/view?usp=sharing"
+                href="https://drive.google.com/file/d/1_1ks_jWN4GXkCGvIFPUs2gn19dhNynPl/view?usp=drive_link"
                 sx={containedLightButton}
               >
                 Get CV <FileDownloadOutlined sx={buttonIcon} />
